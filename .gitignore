@@ -1,0 +1,9 @@
+npm-debug.log
+node_modules
+debug.log
+.idea
+!client/systemjs.config.extras.js
+!client/systemjs.config.js
+*.js.map
+jspm_packages
+client/**/*.js

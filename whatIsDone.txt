@@ -1,0 +1,6 @@
+REST API - Node.js / ExpressJS
+Token Generation & Authentication - Passport / JWT
+CORS - Cross Origin Resource Sharing
+Mongoose ODM for MongoDB
+Angular 2 / Angualr CLI
+Angular 2 - JWT
