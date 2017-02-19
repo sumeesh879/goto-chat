@@ -672,7 +672,7 @@ module.exports = "<div class=\"jumbotron text-center\">\n  <h1>MEAN App</h1>\n  
 /***/ 686:
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Register</h2>\n<form (submit) = \"onLoginSubmit()\">\n  <div class=\"form-group\">\n    <label>Username</label>\n    <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)] = \"username\">\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)] = \"password\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"submit\"/>\n</form>"
+module.exports = "<h2 class=\"page-header\">Login</h2>\n<form (submit) = \"onLoginSubmit()\">\n  <div class=\"form-group\">\n    <label>Username</label>\n    <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)] = \"username\">\n  </div>\n  <div class=\"form-group\">\n    <label>Password</label>\n    <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)] = \"password\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"submit\"/>\n</form>"
 
 /***/ }),
 
