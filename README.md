@@ -40,15 +40,28 @@ Once the `ng build` is executed to build the angular 2 project. All the build ar
 ## Home Page
 ![alt text](screenshots/home.png "Home Page -  This is opening/welcome page to the application")
 
+Home Page -  This is opening/welcome page to the application
+
+
 ## Registration Page
 ![alt text](screenshots/register.png "Register Page - Allows new user to create their account")
 
+Register Page - Allows new user to create their account
+
+
 ## Login Page
 ![alt text](screenshots/login.png "Login Page - Allows registered user to login to the applicaiton")
+
+Login Page - Allows registered user to login to the applicaiton
 
 
 ## Dashboard Page (As of now!)
 ![alt text](screenshots/dashboard.png "Dashboard Page - Once user logs in, user will be redirected to dashboard")
 
+Dashboard Page - Once user logs in, user will be redirected to dashboard
+
+
 ## Profile Page (Getting user data as of now!)
 ![alt text](screenshots/profile.png "Profile Page - Gives the logged in User information")
+
+Profile Page - Gives the logged in User information
