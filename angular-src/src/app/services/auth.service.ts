@@ -20,9 +20,10 @@ export class AuthService {
   }
 
   authenticateUser(user) {
+    console.log('authenticate func');
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/authenticate', user, {headers})
+    return this.http.post('/users/authenticate', user, {headers})
       .map(res => res.json());
       //returns json with success and token and also user info
   }

@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
+    console.log("in component ts file onLoginSubmit func");
+
     this.authService.authenticateUser(user).subscribe(data => {
       console.log(data);
       if(data.success) {
@@ -38,5 +40,4 @@ export class LoginComponent implements OnInit {
       }
     })
   }
-
 }
