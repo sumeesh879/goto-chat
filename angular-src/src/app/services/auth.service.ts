@@ -32,13 +32,9 @@ export class AuthService {
     console.log('authenticate func');
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-<<<<<<< HEAD
     return this.http.post('/users/authenticate', user, {headers})
       .map(res => res.json());
       //returns json with success and token and also user info
-=======
-    return this.http.post(this.dbUrl + 'authenticate', user, {headers}).map(res => res.json);
->>>>>>> 7b073bcc9fd04d30e154a6030a5ed0c6c1eddeff
   }
 
   storeUserData(token, user) {
