@@ -4,6 +4,6 @@ CORS - Cross Origin Resource Sharing
 Mongoose ODM for MongoDB
 Angular 2 / Angualr CLI
 Angular 2 - JWT
-
-
-a50a5089e3214ec9b62359d80004dec4 - newsapi
+mlab
+newsapi.org
+ng-bootstrap

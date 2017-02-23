@@ -1,31 +1,40 @@
-# AngularSrc
+# MEAN STACK APPLICATION
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+Deployed on Heroku @ [NewsFirst](https://newsfirst.herokuapp.com/).
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How to Run
 
-## Code scaffolding
+Run `npm install` to download all the required Node Modules. You can see `whatIsDone.txt` to know what technologies/framework are used in this application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Once all the dependencies are installed. You can now go and start the application using the command `npm start`, which will start the application on port 3000 by default.
 
-## Build
+mongodb server is hosted on `mLab`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## What is done here?
 
-## Running unit tests
+This web application is a demostration of MEAN Stack application which uses Angular 2 CLI to load, manage and build angular 2 code with backend Node.js code.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This application will allow user to create an Account (Password is hashed by using `bcryptjs` and stored in database). Lets the user to login and go to user-specific pages are available only to the logged in person (Profile, Dashboard pages).
 
-## Running end-to-end tests
+Dashboard has News Feeds from around 70 channel to choose from and User can have glance at top news story from all the channels.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+To maintain the session or to know that the user is logged in, JSON Web Token is used. Once the user logs in, JWT token and User is carried through out the session. And once the user logs out, token and user data will be cleared out.
 
-## Deploying to GitHub Pages
+### Models
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+MongoDB is used as the storage for all the user data. In this project, the database is hosted on `mlab` sandbox.
+As ODM, <strong>Mongoose</strong> is used with Node.js.
 
-## Further help
+### Config
 
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+passwort-jwt module is used for authenticating. This module lets you authenticate endpoints using a JSON web token. It is intended to be used to secure RESTful endpoints without sessions.
+
+### Routes
+
+users.js has all the user links - Register, Login (authenticate), profile
+
+### Link between Angular 2 and Backend Node module
+
+By default Angular CLI is hosted on 4200 port. The request for register/login/user data is sent as a post or get request to the port 3000 (in this case) where backend code is running. 
+
+Once the `ng build` is executed to build the angular 2 project. All the build artifacts will be stored in specified directory, `public/`. Once this is done, we will have a complete applicaiton running on port 3000 to do all the operations. 
