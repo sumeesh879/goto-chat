@@ -1,5 +1,7 @@
 # MEAN STACK APPLICATION
 
+Deployed on Heroku @ [NewsFirst](https://newsfirst.herokuapp.com/)
+
 ## How to Run
 
 Run `npm install` to download all the required Node Modules. You can see `whatIsDone.txt` to know what technologies or framework are used in this application.
