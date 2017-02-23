@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { AuthGuard } from './guards/auth.guard';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot(),
     FlashMessagesModule,
     LocalStorageModule.withConfig({
             prefix: 'my-app',

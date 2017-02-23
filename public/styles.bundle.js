@@ -1,15 +1,15 @@
 webpackJsonp([2,4],{
 
-/***/ 394:
+/***/ 463:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(676);
+var content = __webpack_require__(747);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(716)(content, {});
+var update = __webpack_require__(790)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -27,10 +27,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 676:
+/***/ 747:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(677)();
+exports = module.exports = __webpack_require__(748)();
 // imports
 
 
@@ -42,7 +42,7 @@ exports.push([module.i, "\n.news-channel .well {\n  margin-bottom: 10px;\n  over
 
 /***/ }),
 
-/***/ 677:
+/***/ 748:
 /***/ (function(module, exports) {
 
 /*
@@ -99,7 +99,7 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 716:
+/***/ 790:
 /***/ (function(module, exports) {
 
 /*
@@ -352,13 +352,13 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 720:
+/***/ 794:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(394);
+module.exports = __webpack_require__(463);
 
 
 /***/ })
 
-},[720]);
+},[794]);
 //# sourceMappingURL=styles.bundle.map
