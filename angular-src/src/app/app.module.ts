@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { NewsfeedComponent } from './components/newsfeed/newsfeed.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -40,6 +41,11 @@ const appRoutes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'newsfeed/:id',
+    component: NewsfeedComponent,
+    canActivate: [AuthGuard]
   }
 ]
 
@@ -51,7 +57,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewsfeedComponent
   ],
   imports: [
     BrowserModule,
