@@ -17,7 +17,7 @@ export class ChatComponent implements OnInit {
   olUsers: any;
 
   constructor() {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('/');
 
     let listener = Observable.fromEvent(this.socket, 'message');
     listener.subscribe((payload) => {
