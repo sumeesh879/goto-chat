@@ -13,14 +13,24 @@ export class ChatComponent implements OnInit {
   socket = null;
   chatip = '';
   chatmsg = new Array();
-  user: any;
+  currentUser: any;
+  olUsers: any;
 
   constructor() {
-    this.socket = io('/');
+    this.socket = io('http://localhost:3000');
+
     let listener = Observable.fromEvent(this.socket, 'message');
     listener.subscribe((payload) => {
       this.chatmsg.push(payload);
-    })
+    });
+
+    let userListener = Observable.fromEvent(this.socket, 'getUsers');
+    userListener.subscribe((payload) => {
+      
+      this.olUsers = payload;
+      console.log(payload);
+    });
+
   }
 
   send(msg) {
@@ -29,8 +39,8 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user'));
-    this.socket.emit('newUser', this.user.username);
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
+    this.socket.emit('newUser', this.currentUser.username);
   }
 
 }

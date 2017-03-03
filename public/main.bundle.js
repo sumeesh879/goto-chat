@@ -335,10 +335,15 @@ var ChatComponent = (function () {
         this.socket = null;
         this.chatip = '';
         this.chatmsg = new Array();
-        this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('/');
+        this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('http://localhost:3000');
         var listener = __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this.socket, 'message');
         listener.subscribe(function (payload) {
             _this.chatmsg.push(payload);
+        });
+        var userListener = __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this.socket, 'getUsers');
+        userListener.subscribe(function (payload) {
+            _this.olUsers = payload;
+            console.log(payload);
         });
     }
     ChatComponent.prototype.send = function (msg) {
@@ -346,8 +351,8 @@ var ChatComponent = (function () {
         this.socket.emit('message', msg);
     };
     ChatComponent.prototype.ngOnInit = function () {
-        this.user = JSON.parse(localStorage.getItem('user'));
-        this.socket.emit('newUser', this.user.username);
+        this.currentUser = JSON.parse(localStorage.getItem('user'));
+        this.socket.emit('newUser', this.currentUser.username);
     };
     ChatComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -861,7 +866,7 @@ var AuthService = (function () {
         console.log('authenticate func');
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/users/authenticate', user, { headers: headers })
+        return this.http.post('http://localhost:3000/users/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
         //returns json with success and token and also user info
     };
@@ -911,7 +916,7 @@ module.exports = ""
 /***/ 836:
 /***/ (function(module, exports) {
 
-module.exports = ".msgbox {\n    height: 400px;\n    margin: 10px;\n    vertical-align: bottom;\n    display: table-cell;\n}"
+module.exports = ".msgbox {\n    height: 400px;\n    margin: 10px;\n    vertical-align: bottom;\n    display: table-cell;\n}\n\n.well {\n    height: 530px;\n}\n\n.user-heading {\n    font-weight: bold;\n    text-transform: uppercase;\n    text-decoration: underline;\n}\n\n.user-names {\n    font-size: 20px;\n}\n\n.msg-tag {\n    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;\n}"
 
 /***/ }),
 
@@ -974,7 +979,7 @@ module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n    <fla
 /***/ 845:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"msgbox\">\n    <div *ngFor = \"let msg of chatmsg\">\n      <h4><strong>{{msg.user}}: </strong>{{msg.msg}}</h4>\n    </div>\n  </div>\n  <hr/>\n\n  <div class=\"msgbutton\">\n    <div class=\"form-group\" (keyup.enter) = \"send(chatip)\">\n      <label for=\"inputlg\">Enter Message:</label>\n      <input class=\"form-control input-lg\" [(ngModel)] = \"chatip\" type=\"text\"><br/>\n      <a class=\"btn btn-primary\" (click) = \"send(chatip)\">Send Message</a>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-3 olusers well\">\n      <h3 class=\"user-heading\">Users in ChatRoom</h3>\n      <div class=\"user-names\" *ngFor = \"let user of olUsers\">\n        👉 {{user}}\n      </div>\n    </div>\n    <div class = \"col-md-9 chatbox\">\n      <div class=\"msgbox\">\n        <div *ngFor = \"let msg of chatmsg\">\n          <h4><strong>{{msg.user}}: </strong><span class=\"msg-tag\">{{msg.msg}}</span></h4>\n        </div>\n      </div>\n      <hr/>\n      <div class=\"msgbutton\">\n        <div class=\"form-group\" (keyup.enter) = \"send(chatip)\">\n          <label for=\"inputlg\">Enter Message:</label>\n          <input class=\"form-control input-lg\" [(ngModel)] = \"chatip\" type=\"text\" placeholder=\"Hit Enter to Send Message\"><br/>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 

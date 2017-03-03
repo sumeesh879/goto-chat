@@ -82,7 +82,7 @@ io.on('connection', function(socket) {
     });
 
     function updateUsername() {
-        io.sockets.emit('get users', users);
+        io.sockets.emit('getUsers', users);
     }
 });
 
