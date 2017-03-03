@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="msgbox">
+    <div *ngFor = "let msg of chatmsg">
+      <h4><strong>{{msg.user}}: </strong>{{msg.msg}}</h4>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="msgbutton">
+    <div class="form-group" (keyup.enter) = "send(chatip)">
+      <label for="inputlg">Enter Message:</label>
+      <input class="form-control input-lg" [(ngModel)] = "chatip" type="text"><br/>
+      <a class="btn btn-primary" (click) = "send(chatip)">Send Message</a>
+    </div>
+  </div>
+</div>

@@ -19,6 +19,7 @@ import { NewsfeedComponent } from './components/newsfeed/newsfeed.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import { ChatComponent } from './components/chat/chat.component';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +48,11 @@ const appRoutes: Routes = [
     path: 'newsfeed/:id',
     component: NewsfeedComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'chat',
+    component: ChatComponent,
+    canActivate: [AuthGuard]
   }
 ]
 
@@ -59,7 +65,8 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    NewsfeedComponent
+    NewsfeedComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

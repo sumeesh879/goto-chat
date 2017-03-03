@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!authService.loggedIn()"><a [routerLink] = "['/login']">Login</a></li>
         <li *ngIf="authService.loggedIn()"><a [routerLink] = "['/dashboard']">Dashboard</a></li>
+        <li *ngIf="authService.loggedIn()"><a [routerLink] = "['/chat']">ChatRoom</a></li>
         <li *ngIf="authService.loggedIn()"><a [routerLink] = "['/profile']">Profile</a></li>
         <li *ngIf="!authService.loggedIn()"><a [routerLink] = "['/register']">Register</a></li>
         <li *ngIf="authService.loggedIn()"><a (click) = "onLogoutClick()">Logout</a></li>

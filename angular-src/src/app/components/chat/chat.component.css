@@ -1,0 +1,6 @@
+.msgbox {
+    height: 400px;
+    margin: 10px;
+    vertical-align: bottom;
+    display: table-cell;
+}
