@@ -335,7 +335,7 @@ var ChatComponent = (function () {
         this.socket = null;
         this.chatip = '';
         this.chatmsg = new Array();
-        this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('http://localhost:3000');
+        this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('/');
         var listener = __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this.socket, 'message');
         listener.subscribe(function (payload) {
             _this.chatmsg.push(payload);
@@ -866,7 +866,7 @@ var AuthService = (function () {
         console.log('authenticate func');
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/users/authenticate', user, { headers: headers })
+        return this.http.post('/users/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
         //returns json with success and token and also user info
     };
