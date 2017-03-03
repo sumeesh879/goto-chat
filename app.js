@@ -77,7 +77,9 @@ io.on('connection', function(socket) {
     // Adding New User
     socket.on('newUser', (data) => {
         socket.username = data;
-        users.push(socket.username);
+        if(users.indexOf(socket.username) == -1) {
+            users.push(socket.username);
+        }
         updateUsername();
     });
 

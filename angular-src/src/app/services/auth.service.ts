@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 export class AuthService {
   authToken: any;
   user: any;
+  port = "http://localhost:3000";
 
   constructor(private http: Http,
               private localStorage: LocalStorageService) { }

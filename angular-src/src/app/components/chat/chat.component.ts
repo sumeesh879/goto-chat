@@ -15,6 +15,7 @@ export class ChatComponent implements OnInit {
   chatmsg = new Array();
   currentUser: any;
   olUsers: any;
+  port = "http://localhost:3000"
 
   constructor() {
     this.socket = io('/');
@@ -42,5 +43,4 @@ export class ChatComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
     this.socket.emit('newUser', this.currentUser.username);
   }
-
 }

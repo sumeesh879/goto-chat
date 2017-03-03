@@ -335,6 +335,7 @@ var ChatComponent = (function () {
         this.socket = null;
         this.chatip = '';
         this.chatmsg = new Array();
+        this.port = "http://localhost:3000";
         this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client__('/');
         var listener = __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this.socket, 'message');
         listener.subscribe(function (payload) {
@@ -855,6 +856,7 @@ var AuthService = (function () {
     function AuthService(http, localStorage) {
         this.http = http;
         this.localStorage = localStorage;
+        this.port = "http://localhost:3000";
     }
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
