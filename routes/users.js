@@ -60,7 +60,7 @@ router.post('/authenticate', (req, res, next) => {
     })
 });
 
-//Profile
+//Profile / letting passport know to use jwt strategy by send jwt as a parameter
 
 router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
     res.json({user: req.user});
