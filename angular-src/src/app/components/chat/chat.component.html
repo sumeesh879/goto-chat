@@ -3,7 +3,7 @@
     <div class="col-md-3 olusers well">
       <h3 class="user-heading">Users in ChatRoom</h3>
       <div class="user-names" *ngFor = "let user of olUsers">
-        👉 {{user}}
+        <span *ngIf="user != currentUser.username">👉 {{user}}</span>
       </div>
     </div>
     <div class = "col-md-9 chatbox">
