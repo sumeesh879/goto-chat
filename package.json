@@ -1,7 +1,7 @@
 {
-  "name": "mean-stack",
+  "name": "chat-application",
   "version": "1.0.0",
-  "description": "Mean Authentication Application",
+  "description": "Chat Application",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sumeesh879/MEAN-Stack.git"
+    "url": "git+https://github.com/sumeesh879/goto-chat.git"
   },
   "author": "Sumeesh Nagisetty",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sumeesh879/MEAN-Stack/issues"
+    "url": "https://github.com/sumeesh879/goto-chat/issues"
   },
-  "homepage": "https://github.com/sumeesh879/MEAN-Stack#readme",
+  "homepage": "https://github.com/sumeesh879/goto-chat#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.16.1",
