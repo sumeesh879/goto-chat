@@ -12,10 +12,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { HomeComponent } from './components/home/home.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { NewsfeedComponent } from './components/newsfeed/newsfeed.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -24,7 +21,8 @@ import { ChatComponent } from './components/chat/chat.component';
 const appRoutes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: ChatComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'register',
@@ -35,23 +33,8 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'newsfeed/:id',
-    component: NewsfeedComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'chat',
-    component: ChatComponent,
     canActivate: [AuthGuard]
   }
 ]
@@ -62,10 +45,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
-    DashboardComponent,
     ProfileComponent,
-    NewsfeedComponent,
     ChatComponent
   ],
   imports: [

@@ -1,9 +1,4 @@
 
-.news-channel .well {
-  margin-bottom: 10px;
-  overflow: auto;
-  min-height: 300px;
-}
 
 .container .well {
   margin-bottom: 10px;
@@ -22,23 +17,10 @@ h1 {
 }
 
 
-
-.news-title {
-  text-align: left;
-  text-transform: uppercase;
-  text-decoration: underline;
-}
-
-
 .channel {
   text-align: center;
   background: #ffffff;
   padding: 10px 20px;
-}
-
-.news-thumb {
-  vertical-align: middle;
-  margin-top: 25px;
 }
 
 .channel-thumb {
