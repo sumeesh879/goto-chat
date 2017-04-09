@@ -1,9 +1,15 @@
 <div class="container">
+  <div class="form-group" submit="create(chatip)">
+    <input class="form-control input" [(ngModel)] = "roomName" type="text" placeholder="Room Name"><br/>
+    <button class="btn btn-warning">Create Room</button>
+  </div>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-md-3 olusers well">
       <h3 class="user-heading">Users in ChatRoom</h3>
       <div class="user-names" *ngFor = "let user of olUsers">
-        <span *ngIf="user != currentUser.username">👉 {{user}}</span>
+        <span *ngIf="user.name != currentUser.username">✳️ {{user.name}}</span>
       </div>
     </div>
     <div class = "col-md-9 chatbox">

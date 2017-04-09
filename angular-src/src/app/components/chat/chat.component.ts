@@ -36,6 +36,7 @@ export class ChatComponent implements OnInit {
 
   send(msg) {
     this.chatip = '';
+    console.log(this.socket.id);
     this.socket.emit('message', msg);
   }
 
